@@ -53,6 +53,6 @@ module.exports = function(app) {
       scope: 'email'
     }),
     function(req, res) {
-      res.redirect('/')
+      res.redirect('/');
     });
 }
