@@ -17,4 +17,28 @@ export default {
       .end((err, res) => err ? reject(err) : resolve(isJSON(res.text) ? JSON.parse(res.text) : res.text));
     });
   },
+
+  get(o) {
+    if (typeof o === 'string') o = {route: o};  // iff string is passed just use that as route
+    o.method = 'get';
+    return this.makeRequest(o);
+  },
+
+  del(o) {
+    if (typeof o === 'string') o = {route: o};
+    o.method = 'del';
+    return this.makeRequest(o);
+  },
+
+  post(o) {
+    if (typeof o === 'string') o = {route: o};
+    o.method = 'post';
+    return this.makeRequest(o);
+  },
+
+  put(o) {
+    if (typeof o === 'string') o = {route: o};
+    o.method = 'post';
+    return this.makeRequest(o);
+  }
 }
