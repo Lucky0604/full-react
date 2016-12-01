@@ -68,15 +68,15 @@ const startDbPromise = require(path.join(root, 'db'))(process.env.DATABASE_URI);
 startDbPromise.then(() => {
   // bring in API routes from crud folder, don't need to specify 'index.js' inside of the 'crud' folder
   // if file is unspecified 'index.js' is default when folder is required
-  app.use('/api', require(path.join(root, 'server', 'crud')));
+  app.use('/api', require(path.join(root, 'be', 'crud')));
 
   // bring in Auth routes from auth folder (must feed in app as middlewares are added at this step)
-  require(path.join(root, 'server', 'auth'))(app);
+  require(path.join(root, 'be', 'auth'))(app);
 
   // serve index.html from root
-  app.get('/', (req, res, next) => res.sendFile('/index.html'), {
+  app.get('/', (req, res, next) => res.sendFile('/index.html', {
     root: path.join(root, 'public')
-  })
+  }));
 
   // catch 404 and forward to error handler
   app.use((req, res, next) => {

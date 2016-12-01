@@ -33,7 +33,9 @@ const rootReducer = (state = initialState, action) => {
 
     case actionTypes.EDIT_POST:
       // state is immutable, each change replaces an old object with a new one
-      return Object.assign({}, state.postForm, action.post);
+      return Object.assign({}, state, {
+        postForm: Object.assign({}, state.postForm, action.post)
+      });
 
     case actionTypes.ADD_POST:
       return Object.assign({}, state, {

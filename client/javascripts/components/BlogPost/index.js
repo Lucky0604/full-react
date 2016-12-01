@@ -1,4 +1,4 @@
-import React, {Commponent} from 'react';
+import React, {Component} from 'react';
 
 // converts javascript date object to 2-digit slashes date format
 import prettyDate from '../../utils/prettyDate';

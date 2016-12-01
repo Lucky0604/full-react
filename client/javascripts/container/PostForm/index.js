@@ -27,8 +27,7 @@ class PostForm extends Component {
   render() {
     return (
       <li className="blog-add-post">
-        <input className="blog-add-post-title" type="type" placeholder="Title" onChange={this.editPost.bind(this, 'title')} 
-          value={this.props.postForm.title} />
+        <input className="blog-add-post-title" type="text" placeholder="Title" onChange={this.editPost.bind(this, 'title')} value={this.props.postForm.title} />
         <textarea className="blog-add-post-body" placeholder="Body" onChange={this.editPost.bind(this, 'body')} value={this.props.postForm.body} />
         <button onClick={this.props.postForm.updating && this.updatePost.bind(this) || this.addPost.bind(this)}>
           {`${this.props.postForm.updating ? 'Update' : 'Add'} Post`}

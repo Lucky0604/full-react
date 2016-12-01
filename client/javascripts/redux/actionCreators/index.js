@@ -14,7 +14,7 @@ export function initializationRequests() {
     // retrieve app initialization data once root component has mounted
     Promise.all([
       ajax.get('/auth/session'),
-      ajax.get('/auth/post')
+      ajax.get('/api/post')
     ])
     .then(([user, posts]) =>
       dispatch(initializeUserAndPosts({

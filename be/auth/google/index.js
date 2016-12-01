@@ -11,7 +11,7 @@ module.exports = function(app) {
     callbackURL: process.env.GOOGLE_CLIENT_CALLBACK
   };
 
-  passport.user(new GoogleStrategy(googleCredentials, verifyCallback));
+  passport.use(new GoogleStrategy(googleCredentials, verifyCallback));
 
   function verifyCallback(accessToken, refreshToken, profile, done) {
     User.findOneAsync({

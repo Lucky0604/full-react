@@ -36,6 +36,7 @@ if (process.env.NODE_ENV === 'production') {
         <Router history={browserHistory}>
           <Route path="/" component={App} />
         </Router>
+        <DevTools />
       </div>
     </Provider>
   ), document.getElementById('root'));

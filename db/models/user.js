@@ -5,7 +5,7 @@ var UserSchema = new mongoose.Schema({
   email: String,
   password: String,
   salt: String,
-  createdData: {
+  createdDate: {
     type: Date,
     default: new Date()
   },

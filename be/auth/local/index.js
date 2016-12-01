@@ -19,7 +19,7 @@ module.exports = function(app) {
           done(null, false);
         } else {
           // properly authenticated
-          don(null, user);
+          done(null, user);
         }
       }, function(err) {
         done(err);
