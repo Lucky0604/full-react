@@ -12,6 +12,8 @@ import {Router, Route, browserHistory} from 'react-router';
 
 // base of react app
 import App from './App';
+import PostList from './container/PostList';
+import Page from './container/Page';
 
 // if we ever wanted to do server-side rendering, the initial state would get passed to the front end by
 // passing the server-side store to the '__INITIAL_STATE__' client-side global variable via a script tag and 'hydrating'
@@ -34,7 +36,9 @@ if (process.env.NODE_ENV === 'production') {
     <Provider store={store}>
       <div>
         <Router history={browserHistory}>
-          <Route path="/" component={App} />
+          <Route path="/" component={App}>
+            <Route path="posts" component={Page} />
+          </Route>
          </Router>
         <DevTools />
       </div>
