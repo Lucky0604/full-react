@@ -93,7 +93,7 @@ export function updatePostRequest(postForm) {
   }).then(res =>
     dispatch(updatePost({
       index: index,
-      post: post
+      post: res
     })));
 }
 

@@ -38,7 +38,7 @@ export default {
 
   put(o) {
     if (typeof o === 'string') o = {route: o};
-    o.method = 'post';
+    o.method = 'put';
     return this.makeRequest(o);
   }
 }
