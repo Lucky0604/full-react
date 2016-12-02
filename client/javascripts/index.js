@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
       <div>
         <Router history={browserHistory}>
           <Route path="/" component={App} />
-        </Router>
+         </Router>
         <DevTools />
       </div>
     </Provider>
